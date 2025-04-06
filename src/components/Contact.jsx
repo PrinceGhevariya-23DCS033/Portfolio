@@ -96,7 +96,7 @@ const Contact = () => {
       component="section"
       id="contact"
       sx={{
-        py: { xs: 3, sm: 4, md: 8 },
+        py: { xs: 4, md: 8 },
         px: { xs: 2, md: 0 },
         bgcolor: 'background.default',
       }}
@@ -113,8 +113,8 @@ const Contact = () => {
             component="h2"
             sx={{
               textAlign: 'center',
-              mb: { xs: 2, sm: 3, md: 6 },
-              fontSize: { xs: '1.75rem', sm: '2rem', md: '3rem' },
+              mb: { xs: 3, md: 6 },
+              fontSize: { xs: '2rem', md: '3rem' },
               fontWeight: 'bold',
               color: 'text.primary',
             }}
@@ -126,11 +126,10 @@ const Contact = () => {
               <Paper 
                 elevation={3} 
                 sx={{ 
-                  p: { xs: 2, sm: 3, md: 4 },
+                  p: { xs: 2, md: 4 },
                   background: 'linear-gradient(145deg, #ffffff, #f5f5f5)',
                   borderRadius: 2,
                   width: '100%',
-                  mb: { xs: 2, sm: 3, md: 4 },
                 }}
               >
                 <form ref={form} onSubmit={handleSubmit}>
@@ -141,9 +140,9 @@ const Contact = () => {
                     margin="normal"
                     required
                     sx={{ 
-                      mb: { xs: 1.5, sm: 2 },
+                      mb: 2,
                       '& .MuiInputBase-root': {
-                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                        fontSize: { xs: '0.9rem', md: '1rem' }
                       }
                     }}
                   />
@@ -155,9 +154,9 @@ const Contact = () => {
                     margin="normal"
                     required
                     sx={{ 
-                      mb: { xs: 1.5, sm: 2 },
+                      mb: 2,
                       '& .MuiInputBase-root': {
-                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                        fontSize: { xs: '0.9rem', md: '1rem' }
                       }
                     }}
                   />
@@ -170,9 +169,9 @@ const Contact = () => {
                     margin="normal"
                     required
                     sx={{ 
-                      mb: { xs: 2, sm: 3 },
+                      mb: 3,
                       '& .MuiInputBase-root': {
-                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                        fontSize: { xs: '0.9rem', md: '1rem' }
                       }
                     }}
                   />
@@ -184,12 +183,11 @@ const Contact = () => {
                     fullWidth
                     disabled={loading}
                     sx={{
-                      py: { xs: 1, sm: 1.25, md: 1.5 },
-                      fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+                      py: { xs: 1, md: 1.5 },
+                      fontSize: { xs: '0.9rem', md: '1.1rem' },
                       fontWeight: 'bold',
                       borderRadius: 2,
                       transition: 'all 0.3s ease',
-                      mt: { xs: -1, sm: 0 },
                       '&:hover': {
                         transform: 'translateY(-2px)',
                         boxShadow: '0 8px 20px rgba(0,0,0,0.2)',

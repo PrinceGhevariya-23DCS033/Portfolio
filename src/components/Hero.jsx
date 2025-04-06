@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, IconButton, Typography } from '@mui/mater
 import { motion } from 'framer-motion';
 import React from 'react';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Hero = () => {
   return (
@@ -178,31 +179,36 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                style={{ marginTop: '-20px' }}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1 }}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                  href="#contact"
-                  sx={{
-                    py: { xs: 1, sm: 1.25, md: 1.5 },
-                    px: { xs: 2, sm: 3, md: 4 },
-                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
-                    fontWeight: 'bold',
-                    borderRadius: 2,
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
-                    },
-                  }}
-                >
-                  Get In Touch
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    component={ScrollLink}
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    variant="contained"
+                    sx={{
+                      px: 4,
+                      py: 1.5,
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      backgroundColor: 'white',
+                      color: 'primary.main',
+                      borderRadius: '30px',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
+                      },
+                    }}
+                  >
+                    Get in Touch
+                  </Button>
+                </motion.div>
               </motion.div>
             </motion.div>
           </Grid>
