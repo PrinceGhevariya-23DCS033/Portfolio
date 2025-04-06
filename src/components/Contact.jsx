@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { Box, Button, Container, Grid, Paper, Snackbar, TextField } from '@mui/material';
+import { Box, Button, Container, Grid, Paper, Snackbar, TextField, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -96,7 +96,8 @@ const Contact = () => {
       component="section"
       id="contact"
       sx={{
-        py: 8,
+        py: { xs: 3, sm: 4, md: 8 },
+        px: { xs: 2, md: 0 },
         bgcolor: 'background.default',
       }}
     >
@@ -107,14 +108,29 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              textAlign: 'center',
+              mb: { xs: 2, sm: 3, md: 6 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '3rem' },
+              fontWeight: 'bold',
+              color: 'text.primary',
+            }}
+          >
+            Get In Touch
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            <Grid item xs={12} md={8} lg={6}>
               <Paper 
                 elevation={3} 
                 sx={{ 
-                  p: 4,
+                  p: { xs: 2, sm: 3, md: 4 },
                   background: 'linear-gradient(145deg, #ffffff, #f5f5f5)',
-                  borderRadius: 2
+                  borderRadius: 2,
+                  width: '100%',
+                  mb: { xs: 2, sm: 3, md: 4 },
                 }}
               >
                 <form ref={form} onSubmit={handleSubmit}>
@@ -124,7 +140,12 @@ const Contact = () => {
                     name="from_name"
                     margin="normal"
                     required
-                    sx={{ mb: 2 }}
+                    sx={{ 
+                      mb: { xs: 1.5, sm: 2 },
+                      '& .MuiInputBase-root': {
+                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                      }
+                    }}
                   />
                   <TextField
                     fullWidth
@@ -133,7 +154,12 @@ const Contact = () => {
                     type="email"
                     margin="normal"
                     required
-                    sx={{ mb: 2 }}
+                    sx={{ 
+                      mb: { xs: 1.5, sm: 2 },
+                      '& .MuiInputBase-root': {
+                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                      }
+                    }}
                   />
                   <TextField
                     fullWidth
@@ -143,7 +169,12 @@ const Contact = () => {
                     rows={4}
                     margin="normal"
                     required
-                    sx={{ mb: 3 }}
+                    sx={{ 
+                      mb: { xs: 2, sm: 3 },
+                      '& .MuiInputBase-root': {
+                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                      }
+                    }}
                   />
                   <Button
                     type="submit"
@@ -153,11 +184,12 @@ const Contact = () => {
                     fullWidth
                     disabled={loading}
                     sx={{
-                      py: 1.5,
-                      fontSize: '1.1rem',
+                      py: { xs: 1, sm: 1.25, md: 1.5 },
+                      fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
                       fontWeight: 'bold',
                       borderRadius: 2,
                       transition: 'all 0.3s ease',
+                      mt: { xs: -1, sm: 0 },
                       '&:hover': {
                         transform: 'translateY(-2px)',
                         boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
